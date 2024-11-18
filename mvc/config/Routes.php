@@ -1,17 +1,38 @@
 <?php 
+require_once "./mvc/controllers/TourController.php";
+
 class Routes {
     var $array = [];
+
+    // Phương thức để thêm route
+    public static function addRoute($url, $controllerAction) {
+        global $Routes;
+        $Routes[] = ['url' => $url, 'controllerAction' => $controllerAction];
+    }
+
     function handleUrl($url){
        global $Routes;
        $returnUrl = ltrim($url,'/');
+
+        if (is_array($url)) {
+            // Nếu $url là mảng, chuyển thành chuỗi
+            $url = implode('/', $url);
+        }
+
        if (isset($Routes))
        {
             $folder = $this->readFolder('mvc/controllers');
             $strpos = $this->checkUrl($returnUrl,$folder);
             foreach($Routes as $key => $val){
-                $paramer = explode('/',$val);
-                $urlArray = explode('/', ltrim($url,'/'));
-                $explode_ursl_arr = explode('.',$returnUrl);
+                // $paramer = explode('/',$val);
+                // $urlArray = explode('/', ltrim($url,'/'));
+                // $explode_ursl_arr = explode('.',$returnUrl);
+                $paramer = explode('/', $val['controllerAction']); // Đảm bảo rằng $val['controllerAction'] là chuỗi
+                $urlArray = explode('/', ltrim($url, '/')); // Đảm bảo $url là chuỗi tại đây
+                
+                // Kiểm tra nếu $returnUrl là chuỗi
+                $explode_url_arr = (is_string($returnUrl)) ? explode('.', $returnUrl) : [];
+
                 if ($strpos === 0  && $url !== '/'  && !isset($explode_url_arr[1])) {
                     $regex = $this->convertRegex($key);
                     if (!empty($regex)) {
@@ -83,5 +104,9 @@ class Routes {
         return $this->array;
     }
 }
-
+// Định nghĩa các route cho Tour
+Routes::addRoute('/tour/add', 'TourController/add');   // Route cho thêm tour
+Routes::addRoute('/tour/edit/(:num)', 'TourController/edit/$1'); // Route cho sửa tour, với tham số là ID
+Routes::addRoute('/tour/delete/(:num)', 'TourController/delete/$1'); // Route cho xóa tour, với tham số là ID
+Routes::addRoute('/tours', 'TourController/index'); 
 ?>

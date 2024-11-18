@@ -58,7 +58,59 @@ class MyModels extends Database {
         
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
-    function add($data = NULL){
+    function add($data = NULL, $unique_column = NULL){
+        // Kiểm tra xem có dữ liệu không
+        if ($data === NULL) {
+            return json_encode(
+                array(
+                    'type'      => 'Fail',
+                    'Message'   => 'No data provided',
+                )
+            );
+        }
+
+        // Kiểm tra cột duy nhất cần kiểm tra trùng lặp
+        if ($unique_column === NULL) {
+            return json_encode(
+                array(
+                    'type'      => 'Fail',
+                    'Message'   => 'No unique column specified',
+                )
+            );
+        }
+
+        // Kiểm tra trùng lặp
+        $check_query = "SELECT COUNT(*) as count FROM ".$this->table." WHERE ".$unique_column." = ?";
+        $stmt = $this->conn->prepare($check_query);
+        $stmt->execute(array($data[$unique_column]));
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Kiểm tra nếu dữ liệu đã tồn tại
+        if ($row && $row['count'] > 0) {
+            return json_encode(
+                array(
+                    'type'      => 'Fail',
+                    'Message'   => 'Data already exists',
+                )
+            );
+        }
+
+        // Xử lý dữ liệu ảnh thumbnail nếu có
+        if (isset($_FILES['thumbnail']) && $_FILES['thumbnail']['error'] === 0) {
+            $thumbnailPath = $this->processThumbnail($_FILES['thumbnail']);
+            if ($thumbnailPath) {
+                $data['thumbnail'] = $thumbnailPath;  // Lưu đường dẫn ảnh vào dữ liệu
+            } else {
+                return json_encode(
+                    array(
+                        'type'      => 'Fail',
+                        'Message'   => 'Failed to upload thumbnail',
+                    )
+                );
+            }
+        }
+
+
         $fields = array_keys($data);
         $fields_list = implode(",",$fields);
         $values = array_values($data);
@@ -66,6 +118,13 @@ class MyModels extends Database {
         $sql = "INSERT INTO `".$this->table."`(".$fields_list.") VALUES ($qr)";
         $query = $this->conn->prepare($sql);
         if ($query->execute($values)) {
+            $lastInsertId = $this->conn->lastInsertId();  // Lấy ID của bản ghi vừa thêm
+
+            // Nếu có ảnh thumbnail, thêm vào bảng tour_images (hoặc bảng tương ứng)
+            if (isset($data['thumbnail']) && !empty($data['thumbnail'])) {
+                $this->addThumbnailToImages($lastInsertId, $data['thumbnail']);
+            }
+
             return json_encode(
                 array(
                     'type'      => 'Sucessfully',
@@ -83,6 +142,40 @@ class MyModels extends Database {
             );
         }
     }
+
+    // Xử lý ảnh thumbnail
+    private function processThumbnail($file)
+    {
+        // Kiểm tra loại file (chỉ cho phép ảnh)
+        $allowed_types = ['image/jpeg', 'image/png'];
+        $file_type = $file['type'];
+
+        if (in_array($file_type, $allowed_types)) {
+            // Tạo đường dẫn lưu ảnh
+            $upload_dir = "uploads/thumbnails/";
+            $file_name = time() . "_" . basename($file['name']);
+            $target_file = $upload_dir . $file_name;
+
+            // Di chuyển ảnh vào thư mục lưu trữ
+            if (move_uploaded_file($file['tmp_name'], $target_file)) {
+                return $target_file;  // Trả về đường dẫn ảnh
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    // Thêm ảnh vào bảng tour_images (hoặc bảng liên quan)
+    private function addThumbnailToImages($tourId, $thumbnailPath)
+    {
+        // Câu lệnh thêm ảnh vào bảng tour_images
+        $sql = "INSERT INTO `tour_images` (`tour_id`, `image_url`) VALUES (?, ?)";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([$tourId, $thumbnailPath]);
+    }
+
     function update($data = NULL,$where = NULL){
         if ($data != NULL && $where != NULL) {
             $fields = array_keys($data);
