@@ -1,0 +1,216 @@
+.navbar-login{
+    background-color: white;
+    height: 55px;
+
+}
+.navbar-link-login{
+    color: black;
+}
+.login-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-box {
+    position: relative;
+    margin-top: 200px;
+    width: 800px;
+    height: 60%;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.login-box form{
+    margin-left: 20%;
+}
+/* Nút đóng */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+/* Tiêu đề */
+
+/* Phần nhóm nhập liệu */
+.input-group {
+    margin-bottom: 20px;
+}
+.input-group label{
+    font-size: 15px;
+}
+
+.title-login {
+    display: block;
+    font-size: 14px;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 80%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.input-group label{
+    display: inline;
+    font-weight: bold;
+}
+.check-remember, .form-check{
+    display: flex;
+}
+.form-check label{
+    width: 280px;
+}
+.form-check .form-check-input{
+    margin-left: -60px;
+}
+/* Thêm dấu (*) màu đỏ cho các trường bắt buộc */
+.required {
+    color: red;
+}
+
+/* Nút đăng nhập */
+.login-btn {
+    width: 20%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: var(--bright-navy-blue);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 28%;
+    text-align: center;
+}
+.login-box h1 {
+    color: #1d4ed8;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+.login-btn:hover {
+    background-color: #2563eb;
+}
+
+/* Các liên kết tùy chọn */
+.options {
+    text-align: center;
+    margin-left: 35%;
+    margin-top: 20px;
+    display: flex;
+}
+
+.options a {
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+
+.separator-with-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0; /* Khoảng cách trên/dưới */
+    margin-left: 19%;
+}
+
+/* Đường kẻ ngang */
+.separator-with-text::before,
+.separator-with-text::after {
+    content: "";
+    width: 200px;
+    border-top: 1px solid #ccc; /* Màu sắc và độ dày của đường kẻ */
+    margin: 0 10px; /* Khoảng cách giữa chữ và đường kẻ */
+}
+
+/* Văn bản ở giữa */
+.separator-with-text span {
+    font-size: 16px;
+    color: #333; /* Màu chữ */
+    background-color: #fff; /* Nền trắng để tách biệt với đường kẻ */
+    padding: 0 10px; /* Thêm khoảng cách giữa chữ và đường kẻ */
+}
+/* Các nút đăng nhập mạng xã hội */
+.social-login {
+    margin-top: 30px;
+}
+
+.social-btn {
+    width: 50%;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 25%;
+}
+
+.social-btn.facebook {
+    background-color: #3b5998;
+}
+
+.social-btn.facebook:hover {
+    background-color: #2d4373;
+}
+
+.social-btn.google {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+.social-btn.google:hover {
+    background-color: #f5f4f4;
+}
+
+.fa-google{
+    color: red;
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 50%;
+}
+.fa-facebook{
+    font-size: 28px;
+}
+
+.change-psw{
+    display: flex;
+    align-items: flex-end;
+}
+
+.fa-eye{
+    margin-left: 10px;
+    color:#888;
+}
+
+.input-group .toggle-password { 
+    cursor: pointer; 
+} 
+.fa-eye-slash{
+    margin-left: 10px;
+    color:#888;
+}

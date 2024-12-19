@@ -1,0 +1,71 @@
+#thanhtoanTour {
+  display: none;
+}
+
+.page-North,
+.page-Central,
+.page-South {
+  background-image: url("../images/Mien-Bac.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: hsla(0, 0%, 0%, 0.7);
+  background-blend-mode: overlay;
+  display: grid;
+  place-items: center;
+  min-height: 600px;
+  text-align: center;
+  padding-top: 125px;
+}
+/* Nội dung chính */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  color: white;
+  padding: 90px 50px;
+  height: 100vh;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 50px;
+  font-weight: bold;
+  color: rgba(8, 170, 215);
+}
+
+.content .breadcrumb {
+  margin-bottom: 50px;
+  margin-left: 500px;
+  font-size: 18px;
+  font-weight: 300;
+  padding-top: 0px;
+}
+
+.content p {
+  font-size: 18px;
+  max-width: 800px;
+  text-align: left;
+  color: var(--white);
+  margin: 0 auto;
+  line-height: 1.8;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+.mienbac-chitiet {
+  color: var(--bright-navy-blue);
+}
+.mienbac-chitiet a {
+  color: var(--bright-navy-blue);
+  display: inline;
+}
+.mienbac-chitiet a:hover {
+  text-decoration: underline;
+}
+/* .active{
+    background-color: var(--bright-navy-blue);
+    color: white;
+} */

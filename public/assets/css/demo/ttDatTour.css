@@ -1,0 +1,212 @@
+.booking-form {
+    background-color: rgb(154,211,226);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    margin-left: 100px;
+}
+
+.booking-form .gender {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px 0;
+}
+.booking-form label{
+    color: black;
+}
+.booking-form .gender label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #000;
+}
+.booking-form .gender input[type="radio"] {
+    margin-right: 8px;
+}
+.booking-form .form-row1,.form-row2,.form-row3 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.form-row1 .btn-dichvu{
+    background-color: var(--bright-navy-blue);
+    padding: 5px 20px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    width: 170px;
+    display: flex;
+    align-items: center;
+}
+.btn-dichvu {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #00a2d9; /* Màu nền */
+        color: white; /* Màu chữ */
+        text-decoration: none; /* Xóa gạch chân */
+        padding: 5px 15px; /* Khoảng cách bên trong */
+        border-radius: 20px; /* Bo góc */
+        font-size: 16px; /* Kích thước chữ */
+        position: relative; /* Để sử dụng position trong con */
+
+} 
+.icon-container {
+    display: inline-flex;
+    align-items: center;
+    margin-left: -15px; /* Khoảng cách giữa chữ và icon */
+    position: relative;
+}
+.btn-dichvu .soluong-dv{
+    position: absolute;
+    top: -10px; /* Vị trí số lượng */
+    right: -10px;
+    background-color: red; /* Màu nền cho số */
+    color: white; /* Màu chữ cho số */
+    font-size: 14px; /* Kích thước chữ */
+    border-radius: 50%; /* Bo tròn */
+    width: 20px; /* Kích thước vùng số */
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.tttour-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.service-dropdown {
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-row3{
+    width: 78%;
+}
+.form-row3 #soluong{
+    margin-top: 10px;
+    background-color: white;
+    color: black;
+    margin-right: 40px;
+}
+.booking-form .form-control {
+    width: 250px;
+    height: 40px;
+    margin-top: 10px;
+    padding-left: 10px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.booking-form .full-width .form-control{
+    width: 100%;
+}
+
+.booking-form h3 {
+    color: black;
+    margin: 20px 0 10px;
+}
+
+.booking-form .tour-info {
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form .tour-info p {
+    margin: 5px 0;
+    color: black;
+}
+.booking-form .tttour{
+    display: flex;
+    align-items: center;
+}
+.booking-form .price {
+    color: red;
+    font-weight: bold;
+    padding-left: 50%;
+}
+.booking-form .price-service{
+    color: red;
+    font-weight: bold;
+    padding-left: 43.5%;
+}
+.booking-form .total {
+    margin-top: -10px;
+    background-color: #ff4444;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.booking-form .total-price {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.booking-form .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 280px;
+    margin-left: 50%;
+}
+
+.booking-form .bt {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.booking-form .bt{
+    color: #ffffff;
+    background-color: var(--bright-navy-blue);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 130px;
+    height: 50px;
+    font-size: 16px;
+}
+.booking-form .back{
+    background-color: white;
+    color: var(--bright-navy-blue);
+    border: 1px solid;
+}
+
+.dichvu-btn .back{
+    background-color: white;
+    color: var(--bright-navy-blue);
+    border: 1px solid;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
+    text-align: center;
+}
+.dichvu-btn .pay{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+    background-color: var(--bright-navy-blue);
+}

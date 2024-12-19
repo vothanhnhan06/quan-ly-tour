@@ -1,0 +1,75 @@
+/*#tourModel{
+    display: none;
+}*/
+.page-tour{
+    background-image: url("../images/Mien-Trung.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: hsla(0, 0%, 0%, 0.7);
+    background-blend-mode: overlay;
+    display: grid;
+    place-items: center;
+    min-height: 600px;
+    text-align: center;
+    padding-top: 125px;
+}
+.page-tour h1{
+    color: var(--white);
+    margin-top: 150px;
+}
+.specialtour-container h2{
+    padding: 20px 50px;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 100px; 
+    margin-bottom: -6%;
+    margin-left: 30px;
+    background-color: #74D8F4;
+}
+.specialtour-container .view-more{
+    text-align: right;
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 20px;
+    padding: 0;
+    margin-top: 10%;
+    margin-right: 30px;
+    color: var(--bright-navy-blue);
+} 
+.specialtour-container .view-more:hover{
+    color:  #74D8F4;
+} 
+.specialtour-container .responsive{
+    position: relative;
+}
+.specialtour-container .desc div{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.specialtour-container .desc button{
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+} 
+.price-tag-db{
+     position: absolute;
+    bottom: 30%;
+    font-weight: bold;
+    left: 50px;
+    background-color: red;
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 10px 10px 0px 0px;
+}
+.specialtour-container .price-tag{
+    position: absolute;
+    bottom: 42%;
+    font-weight: bold;
+    left: 52px;
+    background-color: red;
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 10px 10px 0px 0px;
+} 

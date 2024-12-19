@@ -1,0 +1,199 @@
+
+.price-row {
+    display: flex; 
+    gap: 5px; 
+}
+.dontour-container {
+    max-width: 1100px;
+    margin: 200px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 1px 2px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dontour-container h2 {
+    text-align: center;
+    color: var(--bright-navy-blue);
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.hoadon-header{
+    display: flex;
+}
+.hoadon-header i{
+    margin-left: 60%;
+    padding: 0px;
+}
+.matour label{
+    margin-left: 40px;
+    color: var(--bright-navy-blue);
+    padding: 10px;
+    border: 1px solid var(--black);
+    margin-bottom: 30px;
+}
+
+.ngaydat label{
+    color: var(--black);
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.dontour-container .booking-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+/* .ds-dv{
+    display: flex;
+}
+.ds-dv label{
+    color: var(--black);
+    width: 180px;
+} */
+
+.dontour-container .left-section,.dontour-container .right-section {
+    flex: 1;
+    margin-left: 30px;
+    padding: 10px;
+}
+.dontour-container .right-section{
+    margin-right: 40px;
+    border: 1px solid var(--bright-navy-blue);
+    box-shadow: 1px 2px 4px 6px rgba(132, 192, 247, 0.1);
+    border-radius: 10px;
+}
+.chitiet-dsdv{
+    display: flex;
+}
+.chitiet-dsdv .tablechititiet {
+    margin-top: 10px;
+    margin-right: 20px;
+    border-collapse: collapse;
+    background-color: #C8EBF5; /* Màu nền nhạt */
+}
+.chitiet-dsdv tr {
+    text-align: left;
+    padding: 10px;
+    width: 80px;
+    font-weight: bold;
+}
+.chitiet-dsdv th {
+    text-align: left;
+    padding: 10px;
+    width: 50px;
+    font-weight: bold;
+}
+
+.chitiet-dsdv td {
+    padding: 10px;
+    border-bottom: 3px solid white;
+}
+
+.chitiet-dsdv .gia {
+    color: #FF0000;
+    font-style: italic;
+}
+
+
+.chitiet-dsdv .tong-gia {
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+}
+.right-section h3{
+    margin-bottom: 20px;
+}
+.right-section i{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+}
+.dontour-container .left-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    background-color: #C8EBF5;
+}
+
+/* .dontour-container .left-section table, .left-section th, .left-section td {
+    border: 2px solid var(--bright-navy-blue);
+}
+
+.dontour-container .left-section th, .left-section td {
+    padding: 10px;
+    text-align: left;
+} 
+ .tienDV, .tongtien{
+    display: flex;
+}
+.tongtien label{
+    margin-left: 14%;
+}
+.tienDV label{
+    margin-left: 100px;
+}
+.dontour-container .left-section th {
+    background-color: #C8EBF5;
+} */
+
+.dontour-container .buttons {
+    margin-left: 64%;
+    display: flex;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dontour-container button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+.dontour-container .form-group {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.dontour-container .form-group label {
+    color: var(--black);
+    margin-bottom: 5px;
+    width: 250px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.dontour-container input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    color: var(--black);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.dontour-container input[type="number"] {
+    width: 100px;
+    margin-left: 20%;
+    margin-bottom: 15px;
+}
+.dontour-container input[readonly] {
+    background-color: #f1f1f1;
+    color: #333;
+}
+.sokhach{
+    display:flex;
+}
+.dontour-container .cancel {
+    background-color: #ff4d4d;
+}
+
+.dontour-container .pdf {
+    background-color: #ffa500;
+}
+
+.dontour-container .confirm {
+    background-color: var(--bright-navy-blue);
+}
